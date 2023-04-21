@@ -1,7 +1,4 @@
-import CardComp from "./Card"
 import AllCards from "./allcard"
-import Example from "./allcard"
-
 
 export default function Cards({ data }) {
 

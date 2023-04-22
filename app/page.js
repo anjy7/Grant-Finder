@@ -20,7 +20,7 @@ async function getData() {
     cache: "no-store"
   });
   if (!res.ok) {
-    return "error"
+    throw new error("asdf")
   }
   return res.json();
 }

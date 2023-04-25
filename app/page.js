@@ -8,7 +8,7 @@ import Main from "@/components/main";
 const inter = Inter({ subsets: ["latin"] });
 
 async function getData() {
-  const res = await fetch(`http://127.0.0.1:8000/findGrants`, {
+  const res = await fetch(`${process.env.BACKEND_URL}/findGrants`, {
     method: "POST",
     body: JSON.stringify({
       category: "",
@@ -20,7 +20,7 @@ async function getData() {
     cache: "no-store"
   });
   if (!res.ok) {
-    return "error"
+    throw new error("asdf")
   }
   return res.json();
 }

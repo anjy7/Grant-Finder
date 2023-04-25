@@ -12,11 +12,12 @@ function Filter({ filtered , setFiltered, setActiveOption, activeOption, activeT
     //   const filtered = resources.filter((card) => card.genre === activeOption);
     //   setFiltered(filtered);
     // }, [activeOption, resources]);
-  console.log("category",activeOption);
-  console.log("type",activeType);
-  console.log("ecosystem",activeEcosystem);
+    
+  // console.log("category",activeOption);
+  // console.log("type",activeType);
+  // console.log("ecosystem",activeEcosystem);
   // console.log("hey",activeOption.length);
-  console.log("yoyo")
+  // console.log("yoyo")
 
   let category = ["AI", "Analytics", "Bridges/Interoperability", "CEX", "Communities", "Content", "DeFi", "Derivatives", "DEX", "Foundation", "GameFi", "Grants", "Index", "Infrastructure",
     "Insurance", "IOT", "Layer 1", "Layer 2", "Lend/Borrow", "Metagovernance", "Music", "NFT", "Oracles", "Privacy", "Protocal DAO", "Quadratic Funding", "Research", "Social", "Social Causes",

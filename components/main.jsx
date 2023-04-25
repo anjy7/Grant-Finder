@@ -14,7 +14,7 @@ export default function Main({ data }) {
     const [searchParam] = useState(["project"]);
     const [searchParam2] = useState(["category"]);
 
-    console.log("data!!!!!!", filtered);
+    // console.log("data!!!!!!", filtered);
 
     function search(items) {
         return items?.filter((item) => {

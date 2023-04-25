@@ -19,9 +19,9 @@ export default function Landing() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const closeMenu = () => setIsMenuOpen(prev => !prev);
     return (
-        <div className="bg-gray-300 min-w-full min-h-fit p-20 flex justify-center items-center flex-col">
+        <div className="bg-[#090A0D]  text-white  min-w-full min-h-fit p-20 flex justify-center items-center flex-col">
 
-            <div className="bg-gray-500 text-4xl font-extrabold p-4 rounded-lg flex items-center gap-3 cursor-pointer" onClick={() => closeMenu()}>
+            <div className="bg-[#090A0D] text-4xl font-extrabold p-4 rounded-lg flex items-center gap-3 cursor-pointer" onClick={() => closeMenu()}>
                 Get Help
                 <ChevronDownIcon
                     strokeWidth={2.5}

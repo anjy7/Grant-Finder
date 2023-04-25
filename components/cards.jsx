@@ -8,7 +8,7 @@ export default function Cards({ data }) {
             {
                 data.map((x) => {
                     let imgUrl = array[Math.floor(array.length * Math.random())];
-                    return  <AllCards project={x.project} details={x.details} type={x.type} category={x.category} deadline={x.deadline} imgUrl={imgUrl}/>
+                    return  <AllCards project={x.project} name={x.name} details={x.details} type={x.type} category={x.tags} deadline={x.deadline} imgUrl={imgUrl}/>
 
                 })
             }

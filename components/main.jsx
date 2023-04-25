@@ -2,19 +2,26 @@
 
 import Cards from "./cards";
 import Filter from "./filter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Main({ data }) {
 
     const [q, setQ] = useState("");
     const [filtered, setFiltered] = useState(data);
     const [activeOption, setActiveOption] = useState([]);
+    const [activeCat, setActiveCat] = useState([]);
     const [activeType, setActiveType] = useState([]);
     const [activeEcosystem, setActiveEcosystem] = useState([]);
     const [searchParam] = useState(["project"]);
     const [searchParam2] = useState(["category"]);
 
-    // console.log("data!!!!!!", filtered);
+    console.log("data!!!!!!", filtered);
+    console.log("all data------------------", data);
+
+    // useEffect(() => {
+    //     console.log("first");
+    // }, [activeOption])
+
 
     function search(items) {
         return items?.filter((item) => {
@@ -30,7 +37,7 @@ export default function Main({ data }) {
 
     return (
 
-        <div className="flex items-center justify-center flex-col mt-4">
+        <div className="flex items-center justify-center flex-col  bg-[#090A0D]">
 
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -55,8 +62,11 @@ export default function Main({ data }) {
             <div>
                 <div>
                     <Filter
+                        data={data}
                         filtered={filtered}
                         setFiltered={setFiltered}
+                        activeCat={activeCat}
+                        setActiveCat={setActiveCat}
                         activeOption={activeOption}
                         setActiveOption={setActiveOption}
                         activeType={activeType}

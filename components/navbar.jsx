@@ -66,12 +66,12 @@ export default function MainNavbar() {
  
   return (
     <>
-      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+      <Navbar className="sticky inset-0 z-10 h-max bg-[#090A0D] text-white max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
             as="a"
             href="#"
-            className="mr-4 cursor-pointer py-1.5 font-medium"
+            className="mr-4 cursor-pointer py-1.5 font-medium text-white"
           >
             Grant Finder ⚡
           </Typography>

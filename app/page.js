@@ -29,6 +29,7 @@ export default async function Home() {
 
   const data = await getData();
   const alldata = data.grants;
+  
   return (
     <div>
       <MainNavbar />

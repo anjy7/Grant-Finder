@@ -8,19 +8,17 @@ import Main from "@/components/main";
 const inter = Inter({ subsets: ["latin"] });
 
 async function getData() {
-  const res = await fetch(`${process.env.BACKEND_URL}/findGrants`, {
-    method: "POST",
-    body: JSON.stringify({
-      category: "",
-    }),
+  const res = await fetch(`https://grant-finder-api.onrender.com/findGrants`, {
+    method: "GET",
+  
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
-    cache: "no-store"
+     next: { revalidate: 10 } 
   });
   if (!res.ok) {
-    throw new error("asdf")
+    throw new Error("Failed to fetch data");
   }
   return res.json();
 }
@@ -29,7 +27,7 @@ export default async function Home() {
 
   const data = await getData();
   const alldata = data.grants;
-  
+  console.log("-====================================================",alldata)
   return (
     <div>
       <MainNavbar />

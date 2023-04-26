@@ -83,11 +83,11 @@ console.log(curcats.includes(newVal.tags));
   // };
   
 
-  let category = ["AI", "Bridges/Interoperability", "CEX", "Communities", "Content", "DeFi", "Derivatives", "DEX", "Foundation", "GameFi", "Grants", "Index", "Infrastructure",
-    "Insurance", "IOT", "Layer 1", "Layer 2", "Lend/Borrow", "Metagovernance", "Music", "NFT", "Oracles", "Privacy", "Protocal DAO", "Quadratic Funding", "Research", "Social", "Social Causes",
+  let category = ["AI", "Bridges/Interoperability", "CEX", "Communities", "Content", "DeFi", "Derivatives", "DEX", "EVM Compatible","Foundation", "GameFi", "Grants", "Index", "Infrastructure",
+    "Insurance","Inter-operability", "IOT", "Layer 1", "Layer 2", "Lend/Borrow", "Metagovernance", "Music", "NFT", "NFT Marketplace", "Oracles", "Privacy", "Protocal DAO", "Quadratic Funding", "Research", "Social", "Social Causes",
     "Stablecoin", "Staking", "Yield Farming"];
 
-  let type = ["Analytics", "Community", "Development", "Other"];
+  let type = ["Analytics" , "Art", "Community","Design", "Development", "Education", "gaming" , "Research", "Tooling",  "Writing", "Other"];
 
   let ecosystem = ["Aurora", "Avalanche", "Bitcoin", "BNB", "Celo", "Cosmo Hub", "Ethereum", "Evmos", "Fantom", "Gnosis", "Harmony", "Internet Computer", "Katlyn", "NEAR Protocol", "Optimism", "Polygon", "Solana", "Stacks"];
 
@@ -177,7 +177,7 @@ console.log(curcats.includes(newVal.tags));
 
         </div>
       </div>
-
+{/* 
       <div className="text-black flex mb-5 mt-5 align-center w-[60rem">
         <h1>Ecosystem</h1>
         <div className="flex flex-wrap flex-col sm:flex-row	">
@@ -204,8 +204,8 @@ console.log(curcats.includes(newVal.tags));
           }
 
         </div>
-      </div>
-    </div >
+      </div> */}
+    </div>
   );
 }
 

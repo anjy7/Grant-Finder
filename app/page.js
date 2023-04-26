@@ -10,12 +10,12 @@ const inter = Inter({ subsets: ["latin"] });
 async function getData() {
   const res = await fetch(`https://grant-finder-api.onrender.com/findGrants`, {
     method: "GET",
-  
+
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
-     next: { revalidate: 10 } 
+     next: { revalidate: 600 }
   });
   if (!res.ok) {
     throw new Error("Failed to fetch data");

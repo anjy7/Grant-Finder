@@ -3,7 +3,7 @@ import { Cagliostro } from "next/font/google";
 import { useEffect, useState } from "react";
 import React from "react";
 
-function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiveOption, activeOption, activeType, setActiveType, activeEcosystem, setActiveEcosystem}) {
+function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiveOption, activeOption, activeType, setActiveType, activeEcosystem, setActiveEcosystem }) {
   // useEffect(() => {
   //   if (activeOption.length == 0 && activeEcosystem.length == 0 && activeType.length == 0) {
   //     // setFiltered(filtered);
@@ -26,7 +26,7 @@ function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiv
     console.log("oooooo", filtered);
     console.log("================", activeOption);
     filterItem(activeOption);
-    console.log("after",filtered);
+    console.log("after", filtered);
   }, [activeOption])
 
   console.log("active!!!!", activeOption);
@@ -60,124 +60,138 @@ function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiv
       //   //   console.log("wassun",curcat[prop],newVal.type.toString() == curcat[prop]);
       //     console.log(((newVal.category == (curcat)) || (newVal.type.valueOf() === (curcat)) || (newVal.category == (curcat))))
       //     return ((newVal.category == (curcat)) || (newVal.type == (curcat)) || (newVal.category == (curcat)));
-      console.log("activeType",activeType)
-if(!curcats.includes(newVal.tags) && activeType.length == 0){
-  console.log("inside 1")
-  return curcats.includes(newVal.type);
-}
-else if(!curcats.includes(newVal.type) && activeCat.length == 0){
-  console.log("inside 2")
-  
-  return curcats.includes(newVal.tags[0]);
-}
-console.log("hoeneue")
-console.log(newVal);
-console.log(curcats.includes(newVal.type));
-console.log(curcats.includes(newVal.tags));
-      return ((curcats.includes(newVal.type) && curcats.includes(newVal.tags)) )
-        });
-        console.log("new",newItem);
-        setFiltered(newItem);
-      };
-    
-  // };
-  
+      console.log("activeType", activeType)
+      if (!curcats.includes(newVal.tags) && activeType.length == 0) {
+        console.log("inside 1")
+        return curcats.includes(newVal.type);
+      }
+      else if (!curcats.includes(newVal.type) && activeCat.length == 0) {
+        console.log("inside 2")
 
-  let category = ["AI", "Bridges/Interoperability", "CEX", "Communities", "Content", "DeFi", "Derivatives", "DEX", "EVM Compatible","Foundation", "GameFi", "Grants", "Index", "Infrastructure",
-    "Insurance","Inter-operability", "IOT", "Layer 1", "Layer 2", "Lend/Borrow", "Metagovernance", "Music", "NFT", "NFT Marketplace", "Oracles", "Privacy", "Protocal DAO", "Quadratic Funding", "Research", "Social", "Social Causes",
+        return curcats.includes(newVal.tags[0]);
+      }
+      console.log("hoeneue")
+      console.log(newVal);
+      console.log(curcats.includes(newVal.type));
+      console.log(curcats.includes(newVal.tags));
+      return ((curcats.includes(newVal.type) && curcats.includes(newVal.tags)))
+    });
+    console.log("new", newItem);
+    setFiltered(newItem);
+  };
+
+  // };
+
+
+  let category = ["AI", "Bridges/Interoperability", "CEX", "Communities", "Content", "DeFi", "Derivatives", "DEX", "EVM Compatible", "Foundation", "GameFi", "Grants", "Index", "Infrastructure",
+    "Insurance", "Inter-operability", "IOT", "Layer 1", "Layer 2", "Lend/Borrow", "Metagovernance", "Music", "NFT", "NFT Marketplace", "Oracles", "Privacy", "Protocal DAO", "Quadratic Funding", "Research", "Social", "Social Causes",
     "Stablecoin", "Staking", "Yield Farming"];
 
-  let type = ["Analytics" , "Art", "Community","Design", "Development", "Education", "gaming" , "Research", "Tooling",  "Writing", "Other"];
+  let type = ["Analytics", "Art", "Community", "Design", "Development", "Education", "gaming", "Research", "Tooling", "Writing", "Other"];
 
   let ecosystem = ["Aurora", "Avalanche", "Bitcoin", "BNB", "Celo", "Cosmo Hub", "Ethereum", "Evmos", "Fantom", "Gnosis", "Harmony", "Internet Computer", "Katlyn", "NEAR Protocol", "Optimism", "Polygon", "Solana", "Stacks"];
 
   return (
-    <div className="w-2/3 m-auto">
-      <div className="text-black flex  mb-5 mt-5 align-center w-[60rem">
-        <h1>Project Category</h1>
-        <div className="flex flex-wrap flex-col sm:flex-row	">
+    <div className="w-2/3">
+      <div className="text-black flex  mb-5 mt-5 justify-center w-full">
+        
+        <div className="grid grid-cols-1	sm:grid-cols-5">
 
           {
             category?.map((x) => {
-              return (<button
-                onClick={() => {
-                  // if (activeOption?.includes(`${x}`)) {
-                  //   setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                  // }
-                  if (activeOption?.includes(`${x}`)) {
-                    // setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                    console.log("999999999999999999999999999", activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                    console.log("1010100101", activeOption);
-                    let yo = activeOption;
-                    setActiveOption(yo);
-                    setActiveCat(yo);
-                    if (activeOption.length == 0) {
-                      setFiltered(data);
-                      return;
+              return (
+                <button
+                  onClick={() => {
+                    // if (activeOption?.includes(`${x}`)) {
+                    //   setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
+                    // }
+                    if (activeOption?.includes(`${x}`)) {
+                      // setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
+                      console.log("999999999999999999999999999", activeOption.splice(activeOption.indexOf(`${x}`), 1));
+                      console.log("1010100101", activeOption);
+                      let yo = activeOption;
+                      setActiveOption(yo);
+                      setActiveCat(yo);
+                      if (activeOption.length == 0) {
+                        setFiltered(data);
+                        return;
+                      }
+                      // const newItem = data.filter((newVal) => {
+                      //   return activeOption.includes(newVal.type || newVal.category);
+                      // });
+                      // setFiltered(newItem);
+                      filterItem(activeOption);
                     }
-                    // const newItem = data.filter((newVal) => {
-                    //   return activeOption.includes(newVal.type || newVal.category);
-                    // });
-                    // setFiltered(newItem);
-                    filterItem(activeOption);
+                    else {
+                      setActiveOption(prev => [...prev, `${x}`])
+                    }
                   }
-                  else {
-                    setActiveOption(prev => [...prev, `${x}`])
                   }
-                }
-                }
-                className={`${activeOption?.includes(`${x}`) ? "bg-black text-gray-600" : "bg-indigo-800 "}  text-white w-fit p-2 ml-1 mb-2 sm:ml-2 rounded-md border border-gray-300 dark:border-gray-800`}
-              >
-                {x}
-              </button>)
-            })
-          }
+                  className={ `${activeOption?.includes(`${x}`) ? "bg-brown-500 text-gray-600" : "bg-black"} : ml-2 mt-1 mb-1 min-w-[8rem] rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]`}
+                >
+                  <div class=" h-full w-full rounded-xl text-white bg-[#090A0D] px-4 py-[1px]">
+                    {x}
+                  </div>
+                </button>
 
+              )
+            }
+            )}
         </div>
       </div>
 
-      <div className="text-black flex mb-5 mt-5 align-center w-[60rem">
-        <h1>Grants Type</h1>
+      
+
+
+      
+      <div className="text-black flex mb-10 mt-5 align-center justify-center w-full ml-10 ">
         <div className="flex flex-wrap flex-col sm:flex-row	">
 
           {
             type?.map((x) => {
-              return (<button
-                onClick={() => {
-                  if (activeOption?.includes(`${x}`)) {
-                    // setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                    console.log("999999999999999999999999999", activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                    console.log("1010100101", activeOption);
-                    let yo = activeOption;
-                    setActiveOption(yo);
-                    setActiveType(yo);
-                    if (activeOption.length == 0) {
-                      setFiltered(data);
-                      return;
-                    }
-                    // const newItem = data.filter((newVal) => {
-                    //   return activeOption.includes(newVal.type) || activeOption.includes(newVal.category) ;
-                    // });
-                    // setFiltered(newItem);
+              return (
+                <button
+                  onClick={() => {
+                    // if (activeOption?.includes(`${x}`)) {
+                    //   setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
+                    // }
+                    if (activeOption?.includes(`${x}`)) {
+                      // setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
+                      console.log("999999999999999999999999999", activeOption.splice(activeOption.indexOf(`${x}`), 1));
+                      console.log("1010100101", activeOption);
+                      let yo = activeOption;
+                      setActiveOption(yo);
+                      setActiveCat(yo);
+                      if (activeOption.length == 0) {
+                        setFiltered(data);
+                        return;
+                      }
+                      // const newItem = data.filter((newVal) => {
+                      //   return activeOption.includes(newVal.type || newVal.category);
+                      // });
+                      // setFiltered(newItem);
                       filterItem(activeOption);
+                    }
+                    else {
+                      setActiveOption(prev => [...prev, `${x}`])
+                    }
                   }
-                  else {
-                    setActiveOption(prev => [...prev, `${x}`])
                   }
+                  className="ml-2 mt-1 mb-1 min-w-[12.6rem] rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]"
+                >
+                  <div class=" h-full w-full rounded-xl text-white bg-[#090A0D] px-4 py-[1px]">
+                    {x}
+                  </div>
+                </button>
 
-                }
-                }
-                className={`${activeOption?.includes(`${x}`) ? "bg-black text-gray-600" : "bg-brown-500"}    text-white w-fit p-2 ml-1 mb-2 sm:ml-2 rounded-md border border-gray-300 dark:border-gray-800`}
-              >
-                {x}
-              </button>)
-            })
-          }
+              )
+            }
+            )}
 
 
         </div>
       </div>
-{/* 
+      {/* 
       <div className="text-black flex mb-5 mt-5 align-center w-[60rem">
         <h1>Ecosystem</h1>
         <div className="flex flex-wrap flex-col sm:flex-row	">

@@ -27,7 +27,7 @@ export default function AllCards({ project, details, type, category, deadline, i
         // </div>
 
         <div className="text-center">
-            <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative     shadow-inner shadow-[#281e8780]">
+            <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative    shadow-inner shadow-[#281e8780]">
                 {/* <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative   shadow-[inset_0_10px_40px_rgba(67, 255, 100, 0.85)]"> */}
                 <img src={imgUrl} className="h-20 w-auto  rounded-full absolute left-[7.6rem] mt-16"></img>
                 <div className="absolute w-full flex justify-center">
@@ -83,20 +83,20 @@ export default function AllCards({ project, details, type, category, deadline, i
                         </div> */}
 
                     </div>
-                    <div className="absolute mt-32">
+                    <div className="absolute mt-[9.5rem]">
                         <div className="flex items-center">
                             
                             <div className="text-white font-semibold text-md">{!funding? <div className="flex"> <img src="/dollar.png" class="h-6 w-6" alt="..."/><div>-</div></div>  : funding}</div>
                         </div>
 
                     </div>
-                    <div className="right-4 absolute mt-32">
+                    <div className="right-4 absolute mt-[9.5rem]">
                         <div className="flex items-center gap-2">
                             <div className="text-white font-semibold text-md">{time == 0 ? "-" : time}</div>
                             <img src="/time.png" class="h-6 w-6" alt="..." />
                         </div>
                     </div>
-                    <div className="left-[6.5rem] bottom-4 absolute">
+                    <div className="left-[6.5rem] bottom-3 absolute">
                         <div className="text-white font-semibold text-md border-[1.6px] py-[4px] px-5 rounded-2xl">Accepting</div>
                     </div>
                 </div>

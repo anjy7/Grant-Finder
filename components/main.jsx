@@ -14,6 +14,7 @@ export default function Main({ data }) {
     const [activeEcosystem, setActiveEcosystem] = useState([]);
     const [searchParam] = useState(["project"]);
     const [searchParam2] = useState(["category"]);
+    const [filters, setFilters] = useState(false)
 
     console.log("data!!!!!!", filtered);
     console.log("all data------------------", data);
@@ -60,21 +61,47 @@ export default function Main({ data }) {
                 />
             </div>
             <div>
-                <div>
-                    <Filter
-                        data={data}
-                        filtered={filtered}
-                        setFiltered={setFiltered}
-                        activeCat={activeCat}
-                        setActiveCat={setActiveCat}
-                        activeOption={activeOption}
-                        setActiveOption={setActiveOption}
-                        activeType={activeType}
-                        setActiveType={setActiveType}
-                        activeEcosystem={activeEcosystem}
-                        setActiveEcosystem={setActiveEcosystem}
-                    />
-                </div>
+                {
+                    filters ?
+                        <div className="flex flex-col justify-center items-center mt-3">
+                            <button
+                                onClick={() => {
+                                    setFilters((prev) => !prev)
+                                }}
+                                className="flex flex-col justify-center items-center">
+                                <div class="mt-4 mb-2 text-5xl font-extrabold bg-gradient-to-r from-purple-900 to-purple-300 bg-clip-text text-transparent">
+                                    FILTERS
+                                </div>
+                                <img src="/Vector.png" className="w-auto h-auto mb-4" />
+                            </button>
+                            <div className="flex justify-center">
+                                <Filter
+                                    data={data}
+                                    filtered={filtered}
+                                    setFiltered={setFiltered}
+                                    activeCat={activeCat}
+                                    setActiveCat={setActiveCat}
+                                    activeOption={activeOption}
+                                    setActiveOption={setActiveOption}
+                                    activeType={activeType}
+                                    setActiveType={setActiveType}
+                                    activeEcosystem={activeEcosystem}
+                                    setActiveEcosystem={setActiveEcosystem}
+                                />
+                            </div>
+                        </div>
+                        :
+                        <button
+                            onClick={() => {
+                                setFilters((prev) => !prev)
+                            }}
+                            className="flex flex-col justify-center items-center mb-14 mt-3">
+                            <div class="mt-4 mb-2 text-5xl font-extrabold bg-gradient-to-r from-[#281E87] to-[#6947BD] bg-clip-text text-transparent">
+                                FILTERS
+                            </div>
+                            <img src="/Vector.png" className="w-auto h-auto" />
+                        </button>
+                }
             </div>
             <div>
                 <Cards data={search(filtered)} />

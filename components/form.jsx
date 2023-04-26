@@ -1,32 +1,34 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
 
-const handleSubmit = (e) => {
-  e.preventDefault();
- 
-  // setisLoading(true);
-  fetch(`https://grant-finder-api.onrender.com/getGpt`, {
-    method: "POST",
-    body: JSON.stringify({
-      desc: para.current.value.trim(),
-    }),
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-    cache: "no-store",
-  })
-    .then((data) => data.json())
-    .then((data) => {
-      console.log(data)
 
-      return;
-    });
-};
 
 
 export default function Form() {
   const para = useRef("");
   const [desc, setDesc] = useState()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   
+    // setisLoading(true);
+    fetch(`https://grant-finder-api.onrender.com/getGpt`, {
+      method: "POST",
+      body: JSON.stringify({
+        desc: para.current.value.trim(),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      cache: "no-store",
+    })
+      .then((data) => data.json())
+      .then((data) => {
+        console.log(data)
+  
+        return;
+      });
+  };
 
   return (
     <>

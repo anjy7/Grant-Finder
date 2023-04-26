@@ -20,7 +20,6 @@ export default function Landing() {
     const closeMenu = () => setIsMenuOpen(prev => !prev);
     return (
         <div className="bg-[#090A0D]  text-white  min-w-full min-h-fit p-20 flex justify-center items-center flex-col">
-
             <div className="bg-[#090A0D] text-4xl font-extrabold p-4 rounded-lg flex items-center gap-3 cursor-pointer" onClick={() => closeMenu()}>
                 Get Help
                 <ChevronDownIcon

@@ -19,7 +19,7 @@ export default function Cards({ data,activeOption }) {
                     let imgUrl = array[Math.floor(array.length * Math.random())];
                     return  (
                         <a href={x.link} target="_blank">
-                            <Card project={x.project} name={x.name} details={x.details} type={x.type} category={x.tags} deadline={x.deadline} imgUrl={x.img} funding={x.funding} time={x.time}/>
+                            <Card project={x.project} name={x.name} details={x.details} type={x.type} category={x.tags} deadline={x.deadline} imgUrl={x.img} funding={x.funding} time={x.time} accepting={x.accepting}/>
                         </a>
                     )
                })}

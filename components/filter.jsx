@@ -56,7 +56,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
   let ecosystem = ["Aurora", "Avalanche", "Bitcoin", "BNB", "Celo", "Cosmo Hub", "Ethereum", "Evmos", "Fantom", "Gnosis", "Harmony", "Internet Computer", "Katlyn", "NEAR Protocol", "Optimism", "Polygon", "Solana", "Stacks"];
 
   return (
-    <div className="ml-[4rem] w-2/3 sm:ml-16">
+    <div className="ml-[6.5rem]  w-2/3 sm:ml-14">
       <div className="text-black flex  mb-5 mt-5 justify-center w-full">
         
         <div className="">
@@ -94,7 +94,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
                     }
                   }
                   }
-                  className={ `${activeOption?.includes(`${x}`) ? "bg-[#6947BD] text-gray-600" : "bg-black"} : ml-2 mt-1 mb-1 min-w-[12.6rem]  rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]`}
+                  className={ `${activeOption?.includes(`${x}`) ? "bg-[#6947BD] text-gray-600" : "bg-black"} : ml-2 mt-1 mb-1 min-w-[8rem]  rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]`}
                 >
                   {/* <div class={`${h-full w-full rounded-xl text-white bg-[#090A0D] px-4 py-[1px]}`}> */}
                   <div className={ `${activeOption?.includes(`${x}`) ? "bg-[#6947BD] bg-opacity-50" : "bg-black"} : h-full w-full rounded-xl text-white`}>
@@ -112,7 +112,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
 
 
       
-      <div className="text-black flex mb-10 mt-5 align-center justify-center w-full  ">
+      <div className="text-black flex mb-10 mt-5 align-center justify-center w-full lg:ml-[-1.4rem]  ">
         <div className="">
 
           {
@@ -155,7 +155,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
                     }
                   }
                   }
-                  className="ml-2 mt-1 mb-1 min-w-[12.6rem] rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]"
+                  className="ml-2 mt-1 mb-1 min-w-[7rem] rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]"
                 >
                   <div className={ `${activeOption?.includes(`${x}`) ? "bg-[#6947BD] bg-opacity-50" : "bg-black"} : h-full w-full rounded-xl text-white`}>
                     {x}

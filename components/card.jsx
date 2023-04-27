@@ -43,7 +43,7 @@ export default function Card({ project, details, type, category, deadline, imgUr
         // </div>
 
         <div className="text-center">
-            <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative bg-black bg-opacity-25   shadow-inner shadow-[#281e8780]">
+            <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative bg-black bg-opacity-25   shadow-inner shadow-[#584fa9ba]">
                 {/* <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative   shadow-[inset_0_10px_40px_rgba(67, 255, 100, 0.85)]"> */}
                 {
                     <img src={(project in imgs)?imgs[project]:imgUrl} className="h-20 w-auto  rounded-full absolute left-[7.6rem] mt-16"></img>

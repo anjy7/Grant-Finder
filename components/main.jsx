@@ -3,6 +3,9 @@
 import Cards from "./cards";
 import Filter from "./filter";
 import { useState, useEffect } from "react";
+import {
+    ChevronDownIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Main({ data,activeOption,setActiveOption,filterItem
     ,filtered 
@@ -75,10 +78,15 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
                                     setFilters((prev) => !prev)
                                 }}
                                 className="flex flex-col justify-center items-center">
-                                <div class="mt-4 mb-2 text-5xl font-extrabold bg-gradient-to-r from-[#281E87] to-[#6947BD] bg-clip-text text-transparent">
+                                <div class="mt-4 mb-2 text:6xl sm:text-5xl font-extrabold bg-gradient-to-r from-[#281E87] to-[#6947BD] bg-clip-text text-transparent">
                                     FILTERS
                                 </div>
-                                <img src="/Vector.png" className="w-auto h-auto mb-4" />
+                                <ChevronDownIcon
+                            strokeWidth={2.5}
+                            className={`h-3 w-3 text-white transition-transform ${filters ? "rotate-180" : ""
+                                }`}
+                                
+                        />
                             </button>
                             <div className="flex justify-center">
                                 <Filter
@@ -103,10 +111,14 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
                                 setFilters((prev) => !prev)
                             }}
                             className="flex flex-col justify-center items-center mb-14 mt-3">
-                            <div class="mt-4 mb-2 text-5xl font-extrabold bg-gradient-to-r from-[#281E87] to-[#6947BD] bg-clip-text text-transparent">
+                            <div class="mt-4 mb-2 text:6xl sm:text-5xl font-extrabold bg-gradient-to-r from-[#281E87] to-[#6947BD] bg-clip-text text-transparent">
                                 FILTERS
                             </div>
-                            <img src="/Vector.png" className="w-auto h-auto" />
+                            <ChevronDownIcon
+                            strokeWidth={2.5}
+                            className={`h-3 w-3 text-white transition-transform ${filters ? "rotate-180" : ""
+                                }`}
+                        />
                         </button>
                 }
             </div>

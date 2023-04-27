@@ -31,11 +31,11 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
                     
                 </div>
                 <div className="text-center mt-2  sm:mb-0 sm:font-semibold">
-                        Welcome!! <br />If you are a web3 startup or an individual having a project idea needing AI assistance or advice with grants please fill up this form.
                     </div>
                 <div>
                     {isMenuOpen ?
                         <div className="flex flex-col h-[30rem]">
+                            <div className="px-5"><br />We will help you find grants with the help of AI. Please explain your project brefly</div>
                             
                             <div className="flex ">
 

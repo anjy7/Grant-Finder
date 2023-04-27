@@ -47,8 +47,8 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
   // };
 
 
-  let category = ["AI", "Bridges/Interoperability", "CEX", "Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Grants", "Index", "Infrastructure",
-    "Insurance", "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracles", "Research", "Social", "Social Causes",
+  let category = ["Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Grants", "Infrastructure",
+    , "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracle", "Social", "Social Causes",
     "Stablecoin", "Staking", "Yield Farming"];
 
   let type = ["Analytics", "Art", "Community","Content", "Design", "Development","Research", "Writing", "Other",];

@@ -3,7 +3,7 @@ import { Cagliostro } from "next/font/google";
 import { useEffect, useState } from "react";
 import React from "react";
 
-function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiveOption, activeOption, activeType, setActiveType, activeEcosystem, setActiveEcosystem }) {
+function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCat, setActiveOption, activeOption, activeType, setActiveType, activeEcosystem, setActiveEcosystem }) {
   // useEffect(() => {
   //   if (activeOption.length == 0 && activeEcosystem.length == 0 && activeType.length == 0) {
   //     // setFiltered(filtered);
@@ -22,14 +22,14 @@ function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiv
   // console.log("hey",activeOption.length);
   // console.log("yoyo")
 
-  useEffect(() => {
-    console.log("oooooo", filtered);
-    console.log("================", activeOption);
-    filterItem(activeOption);
-    console.log("after", filtered);
-  }, [activeOption])
+  // useEffect(() => {
+  //   console.log("oooooo", filtered);
+  //   console.log("================", activeOption);
+  //   filterItem(activeOption);
+  //   console.log("after", filtered);
+  // }, [activeOption])
 
-  console.log("active!!!!", activeOption);
+  // console.log("active!!!!", activeOption);
 
   // const filterItem = (curcats) => {
   //   if (activeOption.length == 0) {
@@ -42,43 +42,7 @@ function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiv
   //   setFiltered(newItem);
   // };
 
-  const filterItem = (curcats) => {
-    if (curcats.length == 0) {
-      setFiltered(data);
-      return;
-    }
-    const newItem = data.filter((newVal) => {
-      // checking if all properties match for each object in curcats array
-      //  curcats.map((curcat) => {
-      //   console.log("inside cur cat!!!",curcat)
-      //   // return Object.keys(curcat).every((prop) => {
-      //   //   console.log("inside cur cat!!!",prop)
-      //   //   console.log("pusssy",curcat)
-      //   //   console.log("pusssy",curcat[0])
-      //   //   console.log("heyeyy",curcat[prop]);
-      //   //   console.log("wassun",newVal.type.toString() == "Development");
-      //   //   console.log("wassun",curcat[prop],newVal.type.toString() == curcat[prop]);
-      //     console.log(((newVal.category == (curcat)) || (newVal.type.valueOf() === (curcat)) || (newVal.category == (curcat))))
-      //     return ((newVal.category == (curcat)) || (newVal.type == (curcat)) || (newVal.category == (curcat)));
-      console.log("activeType", activeType)
-      if (!curcats.includes(newVal.tags) && activeType.length == 0) {
-        console.log("inside 1")
-        return curcats.includes(newVal.type);
-      }
-      else if (!curcats.includes(newVal.type) && activeCat.length == 0) {
-        console.log("inside 2")
-
-        return curcats.includes(newVal.tags[0]);
-      }
-      console.log("hoeneue")
-      console.log(newVal);
-      console.log(curcats.includes(newVal.type));
-      console.log(curcats.includes(newVal.tags));
-      return ((curcats.includes(newVal.type) && curcats.includes(newVal.tags)))
-    });
-    console.log("new", newItem);
-    setFiltered(newItem);
-  };
+  
 
   // };
 
@@ -101,29 +65,32 @@ function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiv
             category?.map((x) => {
               return (
                 <button
-                  onClick={() => {
-                    // if (activeOption?.includes(`${x}`)) {
-                    //   setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                    // }
+                  onClick={(e) => {
+
                     if (activeOption?.includes(`${x}`)) {
-                      // setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                      console.log("999999999999999999999999999", activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                      console.log("1010100101", activeOption);
+
+                      activeOption.splice(activeOption.indexOf(`${x}`), 1);
+                      // console.log("1010100101", activeOption);
                       let yo = activeOption;
-                      setActiveOption(yo);
-                      setActiveCat(yo);
+                      activeCat.splice(activeOption.indexOf(`${x}`), 1)
+
                       if (activeOption.length == 0) {
                         setFiltered(data);
                         return;
                       }
-                      // const newItem = data.filter((newVal) => {
-                      //   return activeOption.includes(newVal.type || newVal.category);
-                      // });
-                      // setFiltered(newItem);
-                      filterItem(activeOption);
+                      // console.log("Calling function");
+                      // console.log(yo)
+                      filterItem(yo);
+                      // console.log("Called function");
                     }
                     else {
-                      setActiveOption(prev => [...prev, `${x}`])
+                      let arr = activeOption;
+                      let arr2 = activeCat;
+                      arr2.push(x);
+                      arr.push(x);
+                      // console.log("-------------------",activeCat);
+                      filterItem(arr);
+                      // setActiveOption(prev => [...prev, `${x}`])
                     }
                   }
                   }
@@ -151,17 +118,18 @@ function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiv
             type?.map((x) => {
               return (
                 <button
-                  onClick={() => {
+                  onClick={(e) => {
                     // if (activeOption?.includes(`${x}`)) {
                     //   setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
                     // }
                     if (activeOption?.includes(`${x}`)) {
                       // setActiveOption(activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                      console.log("999999999999999999999999999", activeOption.splice(activeOption.indexOf(`${x}`), 1));
-                      console.log("1010100101", activeOption);
+                      activeOption.splice(activeOption.indexOf(`${x}`), 1);
+                      // console.log("1010100101", activeOption);
                       let yo = activeOption;
-                      setActiveOption(yo);
-                      setActiveCat(yo);
+                      activeType.splice(activeOption.indexOf(`${x}`), 1)
+                      // setActiveOption(yo);
+                      // setActiveCat(yo);
                       if (activeOption.length == 0) {
                         setFiltered(data);
                         return;
@@ -170,10 +138,19 @@ function Filter({ data, filtered, setFiltered, activeCat, setActiveCat, setActiv
                       //   return activeOption.includes(newVal.type || newVal.category);
                       // });
                       // setFiltered(newItem);
-                      filterItem(activeOption);
+                      filterItem(yo);
+                      // console.log("clickeddd----------------------",newArray);
+                      // setFiltered(newArray);
                     }
                     else {
-                      setActiveOption(prev => [...prev, `${x}`])
+                      let arr = activeOption;
+                      let arr2 = activeType;
+                      arr2.push(x);
+                      arr.push(x);
+                      filterItem(arr);
+                      // console.log("clickeddd----------------------",newArray);
+                      // setFiltered(newArray);
+                      
                     }
                   }
                   }

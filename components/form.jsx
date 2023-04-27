@@ -146,14 +146,17 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
     <>
       {loading 
       ?
-      <div
-        class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        role="status">
-        <span
-          class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-          >Loading...</span
-        >
-      </div>
+        <div className="flex items-center justify-center flex-col min-w-[10rem] min-h-[10rem] sm:min-w-[15rem] sm:min-h-[15rem]">            
+            <div
+              class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+              role="status">
+              <span
+                class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                >Loading...</span
+              >
+            </div>
+        </div>
+
       :
       <form class="flex flex-col items-center justify-center min-w-[25vw]">
         {/* <label htmlFor="message" class="block mb-2 text-sm font-medium text-gray-100 dark:text-white">We will suggest you grants with the help of AI. Describe your project briefly</label> */}

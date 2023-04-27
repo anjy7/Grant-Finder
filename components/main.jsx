@@ -44,7 +44,7 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
 
     return (
 
-        <div className="flex items-center justify-center flex-col  bg-[#090A0D] mb-10">
+        <div className="flex items-center justify-center flex-col overflow-x-hidden bg-[#090A0D] mb-10">
 
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

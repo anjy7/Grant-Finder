@@ -23,7 +23,7 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
         <div className="bg-[#090A0D]  text-white  min-w-full min-h-fit p-20 flex justify-center items-center flex-col">
 
             <div className="bg-[#4628B4] relative flex flex-col justify-center items-center w-4/6 rounded-xl py-5 bg-opacity-10">
-                <div className="bg-gradient-to-r w-52  from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px] text-4xl font-extrabold rounded-[20rem] flex items-center gap-3 cursor-pointer"
+                <div className="bg-gradient-to-r min-w-52  from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px] text-4xl font-extrabold rounded-[20rem] flex items-center gap-3 cursor-pointer"
                     onClick={() => closeMenu()}>
                     <div className="bg-black h-full w-full rounded-[20rem] text-white flex  items-center justify-center  gap-3 py-3 px-5 ">
 

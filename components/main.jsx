@@ -16,8 +16,6 @@ export default function Main({ data }) {
     const [searchParam2] = useState(["category"]);
     const [filters, setFilters] = useState(false)
 
-    console.log("data!!!!!!", filtered);
-    console.log("all data------------------", data);
 
     // useEffect(() => {
     //     console.log("first");

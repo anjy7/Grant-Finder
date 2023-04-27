@@ -1,4 +1,4 @@
-import AllCards from "./allcard"
+import Card from "./card"
 
 export default function Cards({ data }) {
 
@@ -9,9 +9,13 @@ export default function Cards({ data }) {
                 data?.length == 0 || data == null? <div className="text-white">No matching results</div>
                 :
                 data?.map((x) => {
+                    console.log(x)
                     let imgUrl = array[Math.floor(array.length * Math.random())];
-                    return  <AllCards project={x.project} name={x.name} details={x.details} type={x.type} category={x.tags} deadline={x.deadline} imgUrl={x.img} funding={x.funding} time={x.time}/>
-
+                    return  (
+                        <a href={x.link} target="_blank">
+                            <Card project={x.project} name={x.name} details={x.details} type={x.type} category={x.tags} deadline={x.deadline} imgUrl={x.img} funding={x.funding} time={x.time}/>
+                        </a>
+                    )
                 })
             }
         </div>

@@ -8,14 +8,13 @@ import Main from "@/components/main";
 const inter = Inter({ subsets: ["latin"] });
 
 async function getData() {
-  const res = await fetch(`https://grant-finder-api.onrender.com/findGrants`, {
+  const res = await fetch(`${process.env.BACKEND_URL}/findGrants`, {
     method: "GET",
-
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
-     next: { revalidate: 600 }
+    cache:'no-store'
   });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -27,10 +26,11 @@ export default async function Home() {
 
   const data = await getData();
   const alldata = data.grants;
+  console.log(alldata)
   // console.log("-====================================================",alldata)
   return (
     <div>
-      <MainNavbar />
+      {/* <MainNavbar /> */}
       <Landing />
       <Main data={alldata}/>
     </div>

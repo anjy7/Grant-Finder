@@ -29,7 +29,7 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
 
                        
 
-                        Get Help
+                        Get AI Help
                         <ChevronDownIcon
                             strokeWidth={2.5}
                             className={`h-3 w-3 transition-transform ${isMenuOpen ? "rotate-180" : ""
@@ -39,7 +39,7 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
                     </div>
                     
                 </div>
-                <div className="text-center mt-2">
+                <div className="text-center mt-2 font-semibold">
                         Welcome!! <br />If you are a web3 startup or an individual having a project idea needing AI assistance or advice with grants please fill up this form.
                     </div>
                 <div>
@@ -48,7 +48,7 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
                             
                             <div className="flex ">
 
-                                <div className="absolute top-44 left-16 w-30">
+                                <div className="absolute top-52 left-16 w-30">
 
                                     <Form setActiveOption={setActiveOption} filterItem={filterItem} setFilters={setFilters} />
                                 </div>

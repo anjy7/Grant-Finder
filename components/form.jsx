@@ -3,6 +3,23 @@ import { Configuration, OpenAIApi } from "openai";
 // import { usePathname, useRouter } from "next/navigation";
 import axios from "axios";
 
+function scrollToBottom() {
+  const startTime = performance.now();
+  const duration = 1000; // 2 seconds
+  const start = window.pageYOffset;
+  const end = 1030;
+
+  function step(timestamp) {
+    const progress = Math.min(1, (timestamp - startTime) / duration);
+    const ease = 0.5 - (0.5 * Math.cos(Math.PI * progress));
+    window.scrollTo(0, start + ease * (end - start));
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+
 export default function Form({setActiveOption,filterItem,setFilters}) {
   let [obj, setObj] = useState({ choices: [] });
   const [desc, setDesc] = useState()
@@ -55,6 +72,7 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
       }
     })
       .then((res) => {
+        scrollToBottom();
         console.log(res);
         responseHandler(res);
       })

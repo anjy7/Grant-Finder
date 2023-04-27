@@ -58,7 +58,7 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
                     id="default-search"
                     class="bg-opacity-10 focus:outline-none placeholder-white block md:w-[50rem] p-4 pl-10 text-sm text-white border border-gray-300 rounded-[15rem] bg-gray-50 dark:bg-gray-700 border-none dark:border-gray-600 dark:placeholder-white dark:text-white"
                     value={q}
-                    placeholder="Search Ecosystem..."
+                    placeholder="Search"
                     onChange={(e) => {
                         setQ(e.target.value);
                     }}
@@ -123,7 +123,7 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
                 }
             </div>
             <div>
-                <Cards data={search(filtered)} />
+                <Cards data={search(filtered)}/>
             </div>
         </div>
 

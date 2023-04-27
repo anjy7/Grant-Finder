@@ -30,7 +30,7 @@ export default async function Home() {
   console.log(alldata)
   // console.log("-====================================================",alldata)
   return (
-    <div>
+    <div className="max-w-[100vw] ">
       <Combine alldata={alldata}/>
     </div>
   )

@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import MainNavbar from "@/components/navbar";
 import Landing from "@/components/landing";
 import Main from "@/components/main";
+import Combine from "@/components/combine";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,9 +31,7 @@ export default async function Home() {
   // console.log("-====================================================",alldata)
   return (
     <div>
-      {/* <MainNavbar /> */}
-      <Landing />
-      <Main data={alldata}/>
+      <Combine alldata={alldata}/>
     </div>
   )
 }

@@ -1,10 +1,13 @@
 import { useState,useRef, useEffect } from "react";
 import { Configuration, OpenAIApi } from "openai";
+// import { usePathname, useRouter } from "next/navigation";
 import axios from "axios";
 
-export default function Form() {
+export default function Form({setActiveOption,filterItem,setFilters}) {
   let [obj, setObj] = useState({ choices: [] });
   const [desc, setDesc] = useState()
+  // const router = useRouter();
+  // const path = usePathname();
   // const configuration = new Configuration({
   //   organization: "org-tBuzVnJ4g5oCThOoLUXr5JJx",
   //   apiKey: "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",
@@ -22,14 +25,23 @@ export default function Form() {
   //   console.log(response.data.choices[0].text);
   // }
 
+  let category = ["Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Grants", "Infrastructure",
+  , "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracle", "Social", "Social Causes",
+  "Stablecoin", "Staking", "Yield Farming"];
+
+let type = ["Analytics", "Art", "Community","Content", "Design", "Development","Research", "Writing", "Other",];
+
+
   const getRes = (e) => {
     e.preventDefault()
-    let prom = `Read the project description given below and tell me in which of the following categories does it fall in, it can fall in more than one category. Answer only in a python list format. The categories are "AI", "Bridges/Interoperability", "CEX", "Communities", "Content", "DeFi", "Derivatives", "DEX", "EVM Compatible","Foundation", "GameFi", "Grants", "Index", "Infrastructure", "Insurance","Inter-operability", "IOT", "Layer 1", "Layer 2", "Lend/Borrow", "Metagovernance", "Music", "NFT", "NFT Marketplace", "Oracles", "Privacy", "Protocal DAO", "Quadratic Funding", "Research", "Social", "Social Causes", "Stablecoin", "Staking", "Yield Farming".`
+    let prom = `Read the project description given below and tell me in which of the following categories does it fall in, it can fall in more than one category. Answer only in a python list format. The categories are "Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Grants", "Infrastructure",
+    , "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracle", "Social", "Social Causes",
+    "Stablecoin", "Staking", "Yield Farming".`
     console.log(desc)
     let payload = {
       prompt: prom+desc,
       temperature: 0,
-      model: "text-davinci-002"
+      model: "text-davinci-003"
     }
     // setLoading(true);
     axios({
@@ -59,6 +71,12 @@ export default function Form() {
     }
   };
 
+  // function refreshData (router,path) {
+  //   if(router && path){
+  //     router.refresh();
+  //   }
+  // }
+
   // this is where object changes
   useEffect(()=>{
     let asdf = obj.choices[0]?.text.trim("\n\n")
@@ -70,6 +88,10 @@ export default function Form() {
         lis[i] = lis[i].replace(/^"(.*)"$/, '$1');
       }
       console.log(lis)
+      setActiveOption(lis);
+      filterItem(lis);
+      setFilters(true)
+      // refreshData(router, path);
     }
   }, [obj])
 

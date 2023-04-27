@@ -15,7 +15,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Form from "./form";
 
-export default function Landing() {
+export default function Landing({setActiveOption,filterItem,setFilters}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const closeMenu = () => setIsMenuOpen(prev => !prev);
     return (
@@ -30,7 +30,7 @@ export default function Landing() {
                         }`}
                 />
             </div>
-            {isMenuOpen ? <Form /> : null}
+            {isMenuOpen ? <Form setActiveOption={setActiveOption} filterItem={filterItem} setFilters={setFilters}/> : null}
         </div>
     )
 }

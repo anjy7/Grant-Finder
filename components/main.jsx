@@ -4,22 +4,28 @@ import Cards from "./cards";
 import Filter from "./filter";
 import { useState, useEffect } from "react";
 
-export default function Main({ data }) {
+export default function Main({ data,activeOption,setActiveOption,filterItem
+    ,filtered 
+    ,setFiltered 
+    ,activeCat 
+    ,setActiveCat
+    ,activeType   
+    ,setActiveType
+    ,filters
+    ,setFilters
+}) {
 
     const [q, setQ] = useState("");
-    const [filtered, setFiltered] = useState(data);
-    const [activeOption, setActiveOption] = useState([]);
-    const [activeCat, setActiveCat] = useState([]);
-    const [activeType, setActiveType] = useState([]);
+
     const [activeEcosystem, setActiveEcosystem] = useState([]);
     const [searchParam] = useState(["project"]);
     const [searchParam2] = useState(["category"]);
-    const [filters, setFilters] = useState(false)
+    
 
 
-    // useEffect(() => {
-    //     console.log("first");
-    // }, [activeOption])
+    useEffect(() => {
+        console.log("first");
+    }, [activeOption])
 
 
     function search(items) {
@@ -34,73 +40,7 @@ export default function Main({ data }) {
         );
     }
 
-    function filterItem(curcats) {
-        if (curcats.length === 0) {
-            setFiltered(data);
-            return;
-        }
-
-        const filteredData = data.filter((newVal) => {
-            // console.log("newVal", newVal)
-            const typeMatch = newVal.type?.some(x => curcats.includes(x));
-            // console.log("typeMatch", typeMatch);
-            const tagsMatch = newVal.tags?.some(x => curcats.includes(x));
-            // console.log("tagsMatch", tagsMatch);
-
-            if (tagsMatch == false && typeMatch == false) {
-                return false;
-            }
-
-            if (activeType.length == 0) {
-                return tagsMatch;
-            }
-            if (activeCat.length == 0) {
-                return typeMatch;
-            }
-            else{
-                return tagsMatch && typeMatch
-            }
-        });
-
-        setFiltered(filteredData);
-    }
-
-
-    function filterItem2(curcats) {
-        if (curcats.length == 0) {
-            setFiltered(data);
-            return;
-        }
-        console.log("inside filter function 1");
-        // const filteredData = data.filter((newVal) => {
-        //     newVal.type?.map((x) => {
-        //         console.log("type",x)
-        //         console.log("curcats",curcats)
-        //       console.log("hi",curcats.includes(x));
-
-        //       return (curcats.includes(x))
-        //     })
-        //   })
-        const filteredData = data.filter((newVal) => {
-            return newVal.type?.some(x => curcats.includes(x));
-        })
-            .filter((newVal) => {
-                return newVal.tags?.some(x => curcats.includes(x));
-            })
-            ;
-        // .filter((newVal) => {
-        //   console.log("value",newVal)
-        //   newVal.tags?.map((x) => {
-        //     console.log("tags",curcats.includes(x));
-        //     return (curcats.includes(x))
-        //   })
-
-        // })
-
-        // console.log("new", newItem);
-        // console.log("filtered data++++++++++++++++++++++", data)
-        setFiltered(filteredData);
-    };
+    
 
     return (
 

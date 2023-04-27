@@ -20,10 +20,10 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
     const closeMenu = () => setIsMenuOpen(prev => !prev);
     return (
 
-        <div className="bg-[#090A0D]  text-white  min-w-full min-h-fit p-20 flex justify-center items-center flex-col">
+        <div className="bg-[#090A0D] overflow-x-hidden text-white  w-full min-h-fit p-20 flex justify-center items-center flex-col">
 
-            <div className="bg-[#4628B4] relative flex flex-col justify-center items-center w-4/6 rounded-xl py-5 bg-opacity-10">
-                <div className="bg-gradient-to-r min-w-52  from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px] text-4xl font-extrabold rounded-[20rem] flex items-center gap-3 cursor-pointer"
+            <div className="bg-[#4628B4] relative flex flex-col justify-center items-center w-72 p-2 md:w-4/6 rounded-xl py-5 bg-opacity-10">
+                <div className="bg-gradient-to-r  md:min-w-52  from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px] md:text-4xl font-extrabold rounded-[20rem] flex items-center gap-3 cursor-pointer"
                     onClick={() => closeMenu()}>
                     <div className="bg-black h-full w-full rounded-[20rem] text-white flex  items-center justify-center  gap-3 py-3 px-5 ">
 
@@ -39,7 +39,7 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
                     </div>
                     
                 </div>
-                <div className="text-center mt-2 font-semibold">
+                <div className="text-center mt-2  sm:mb-0 sm:font-semibold">
                         Welcome!! <br />If you are a web3 startup or an individual having a project idea needing AI assistance or advice with grants please fill up this form.
                     </div>
                 <div>
@@ -48,7 +48,7 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
                             
                             <div className="flex ">
 
-                                <div className="absolute top-52 left-16 w-30">
+                                <div className="absolute top-64 sm:top-52 left-16 w-30">
 
                                     <Form setActiveOption={setActiveOption} filterItem={filterItem} setFilters={setFilters} />
                                 </div>

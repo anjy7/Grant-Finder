@@ -111,7 +111,7 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
                 }
             </div>
             <div>
-                <Cards data={search(filtered)} />
+                <Cards data={search(filtered)}/>
             </div>
         </div>
 

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: 'CustomFont';
+    src: url('/neonavybold.ttf') format('truetype');
+  }

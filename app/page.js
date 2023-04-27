@@ -30,7 +30,10 @@ export default async function Home() {
   console.log(alldata)
   // console.log("-====================================================",alldata)
   return (
-    <div>
+    <div className="max-w-[100vw] ">
+      <div className="flex justify-center">
+        <div className="text-white text-4xl font-CustonFont">Web3 Grants</div>
+      </div>
       <Combine alldata={alldata}/>
     </div>
   )

@@ -27,16 +27,16 @@ export default function AllCards({ project, details, type, category, deadline, i
         // </div>
 
         <div className="text-center">
-            <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative    shadow-inner shadow-[#281e8780]">
+            <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative bg-black bg-opacity-25   shadow-inner shadow-[#281e8780]">
                 {/* <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative   shadow-[inset_0_10px_40px_rgba(67, 255, 100, 0.85)]"> */}
                 <img src={imgUrl} className="h-20 w-auto  rounded-full absolute left-[7.6rem] mt-16"></img>
                 <div className="absolute w-full flex justify-center">
                 <div className="text-white font-medium text-lg mt-3 mr-10">{project}</div>
                 </div>
-                <img src="/Ellipse2.png" class="absolute  ml-[-4rem] max-w-5xl  mt-[-4rem] opacity-[0.75]" alt="..." />
+                <img src="/Ellipse2.png" class="absolute  ml-[-3.5rem] left-[.1rem] max-w-[80rem]   opacity-[0.75]" alt="..." />
                 {/* <img src="/Ellipse1.png" class="absolute  ml-[-3rem] min-w-5xl  mt-[2.5rem]" alt="..." /> */}
-                <img src="/Ellipse1.png" class="absolute  left-0 ml-[-3rem] w-[16rem]  mt-[1.2rem] opacity-[0.75]" alt="..." />
-                <img src="/Ellipse1.png" class="absolute  right-0 mr-[-3rem] w-[16rem]  mt-[1.2rem] opacity-[0.75]" alt="..." />
+                {/* <img src="/Ellipse1.png" class="absolute  left-0 ml-[-1rem] w-[11.5rem]  mt-[3.7rem] opacity-[0.75]" alt="..." />
+                <img src="/Ellipse1.png" class="absolute  right-0 mr-[-3rem] w-[10rem]  mt-[1.2rem] opacity-[0.75]" alt="..." /> */}
                 <div className="h-[50%] rounded-[3.5rem] bg-[#9a92d226] opacity-[0.08] "></div>
                 <div className="flex flex-col ">
                     <div className="text-white font-medium text-lg mt-3">{name}</div>

@@ -14,7 +14,7 @@ const imgs = {
     "Lit Protocol":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREHPK1XrbCP8eYk-utg__2CeytXcZK2lOe8P1WtVKm0SK6yoWIdeoyItlVuS7u0X5XFak&usqp=CAU"
 }
 
-export default function Card({ project, details, type, category, deadline, imgUrl, name, funding, time }) {
+export default function Card({ project, details, type, category, deadline, imgUrl, name, funding, time, accepting }) {
     console.log(project in imgs)
     return (
         // <div className="h-[28rem] w-80 rounded-[3.3rem] bg-gray-500 bg-opacity-20 ">
@@ -115,7 +115,10 @@ export default function Card({ project, details, type, category, deadline, imgUr
                         </div>
                     </div>
                     <div className="left-[6.5rem] bottom-3 absolute">
-                        <div className="text-white font-semibold text-md border-[1.6px] py-[4px] px-5 rounded-2xl">Accepting</div>
+                    {
+                        accepting == "Accepting Applications"?<div className="text-white font-semibold text-md border-[1.6px] py-[4px] px-5 rounded-2xl">Accepting</div>:accepting == 0? <div className="text-white font-semibold text-md border-[1.6px] py-[4px] px-5 rounded-2xl">Accepting</div>:accepting == "Opening soon"? <div className="text-white font-semibold text-md border-[1.6px] py-[4px] px-5 rounded-2xl">Opening soon</div>: <div className="text-white font-semibold text-md border-[1.6px] py-[4px] px-5 rounded-2xl">Closed</div>
+                    }
+                        
                     </div>
                 </div>
             </div>

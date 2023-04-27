@@ -23,6 +23,7 @@ function scrollToBottom() {
 export default function Form({setActiveOption,filterItem,setFilters}) {
   let [obj, setObj] = useState({ choices: [] });
   const [desc, setDesc] = useState()
+  const [loading, setLoading] = useState(false);
   // const router = useRouter();
   // const path = usePathname();
   // const configuration = new Configuration({
@@ -51,6 +52,7 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
 
   const getRes = (e) => {
     e.preventDefault()
+    setLoading(true)
     let prom = `Read the project description given below and tell me in which of the following categories does it fall in, it can fall in more than one category. Answer only in a python list format. The categories are "Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Grants", "Infrastructure",
     , "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracle", "Social", "Social Causes",
     "Stablecoin", "Staking", "Yield Farming".`
@@ -72,6 +74,7 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
       }
     })
       .then((res) => {
+        setLoading(false)
         scrollToBottom();
         console.log(res);
         responseHandler(res);
@@ -141,11 +144,23 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
 
   return (
     <>
+      {loading 
+      ?
+      <div
+        class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        role="status">
+        <span
+          class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+          >Loading...</span
+        >
+      </div>
+      :
       <form class="flex flex-col items-center justify-center min-w-[25vw]">
         {/* <label htmlFor="message" class="block mb-2 text-sm font-medium text-gray-100 dark:text-white">We will suggest you grants with the help of AI. Describe your project briefly</label> */}
-        <textarea id="message" rows="4" value={desc} onChange={(e)=>{setDesc(e.target.value)}} class="block p-2.5 w-full focus:outline-none min-h-[20rem] max-h-80  text-sm text-white border-none bg-white bg-opacity-10 rounded-3xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600" placeholder="Describe..." required></textarea>
+        <textarea id="message" rows="4" value={desc} onChange={(e)=>{setDesc(e.target.value)}} class="block p-2.5 w-full focus:outline-none min-h-[10rem] max-h-80  text-sm text-white border-none bg-white bg-opacity-10 rounded-3xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600" placeholder="Describe..." required></textarea>
         <button onClick={(e)=>getRes(e)} class="mt-4  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
       </form>
+      }
     </>
   )
 }

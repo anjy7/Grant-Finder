@@ -34,17 +34,17 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
                     </div>
                 <div>
                     {isMenuOpen ?
-                        <div className="flex flex-col h-[30rem]">
+                        <div className="flex flex-col h-[20rem]">
                             <div className="px-5"><br />We will help you find grants with the help of AI. Please explain your project brefly</div>
                             
                             <div className="flex ">
 
-                                <div className="absolute top-64 sm:top-52 left-16 w-30">
+                                <div className="absolute mt-5 left-16 w-30">
 
                                     <Form setActiveOption={setActiveOption} filterItem={filterItem} setFilters={setFilters} />
                                 </div>
 
-                                <img src="/robot.png" className="invisible  lg:visible absolute h-[30rem] w-96 bottom-0 right-0" />
+                                <img src="/robot.png" className="invisible  lg:visible absolute h-[20rem] w-[17rem] bottom-0 right-0" />
                             </div>
                         </div>
                         : null

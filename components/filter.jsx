@@ -47,7 +47,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
   // };
 
 
-  let category = ["Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Grants", "Infrastructure",
+  let category = ["Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Infrastructure",
     , "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracle", "Social", "Social Causes",
     "Stablecoin", "Staking", "Yield Farming"];
 

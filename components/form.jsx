@@ -53,7 +53,7 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
   const getRes = (e) => {
     e.preventDefault()
     setLoading(true)
-    let prom = `Read the project description given below and tell me in which of the following categories does it fall in, it can fall in more than one category. Answer only in a python list format. The categories are "Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Grants", "Infrastructure",
+    let prom = `Read the project description given below and tell me in which of the following categories does it fall in, it can fall in more than one category. Answer only in a python list format. The categories are "Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Infrastructure",
     , "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracle", "Social", "Social Causes",
     "Stablecoin", "Staking", "Yield Farming".`
     console.log(desc)
@@ -107,6 +107,9 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
       for (let i = 0; i < lis.length; i++) {
         lis[i] = lis[i].trim();
         lis[i] = lis[i].replace(/^"(.*)"$/, '$1');
+      }
+      if (lis[lis.length-1] == ""){
+        lis.splice(-1)
       }
       console.log(lis)
       setActiveOption(lis);

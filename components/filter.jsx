@@ -47,11 +47,11 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
   // };
 
 
-  let category = ["AI", "Bridges/Interoperability", "CEX", "Communities", "Content", "DeFi", "Derivatives", "DEX", "EVM Compatible", "Foundation", "GameFi", "Grants", "Index", "Infrastructure",
-    "Insurance", "Inter-operability", "IOT", "Layer 1", "Layer 2", "Lend/Borrow", "Metagovernance", "Music", "NFT", "NFT Marketplace", "Oracles", "Privacy", "Protocal DAO", "Quadratic Funding", "Research", "Social", "Social Causes",
+  let category = ["AI", "Bridges/Interoperability", "CEX", "Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Grants", "Index", "Infrastructure",
+    "Insurance", "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracles", "Research", "Social", "Social Causes",
     "Stablecoin", "Staking", "Yield Farming"];
 
-  let type = ["Analytics", "Art", "Community", "Design", "Development", "Education", "gaming", "Research", "Tooling", "Writing", "Other"];
+  let type = ["Analytics", "Art", "Community","Content", "Design", "Development","Research", "Writing", "Other",];
 
   let ecosystem = ["Aurora", "Avalanche", "Bitcoin", "BNB", "Celo", "Cosmo Hub", "Ethereum", "Evmos", "Fantom", "Gnosis", "Harmony", "Internet Computer", "Katlyn", "NEAR Protocol", "Optimism", "Polygon", "Solana", "Stacks"];
 

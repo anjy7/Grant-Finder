@@ -53,7 +53,7 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
                 <input
                     type="search"
                     id="default-search"
-                    class="opacity-10 focus:outline-none placeholder-black block md:w-[50rem] p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-[15rem] bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-opacity-10 focus:outline-none placeholder-white block md:w-[50rem] p-4 pl-10 text-sm text-white border border-gray-300 rounded-[15rem] bg-gray-50 dark:bg-gray-700 border-none dark:border-gray-600 dark:placeholder-white dark:text-white"
                     value={q}
                     placeholder="Search Ecosystem..."
                     onChange={(e) => {

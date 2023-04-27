@@ -125,8 +125,8 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
     <>
       <form class="flex flex-col items-center justify-center min-w-[25vw]">
         {/* <label htmlFor="message" class="block mb-2 text-sm font-medium text-gray-100 dark:text-white">We will suggest you grants with the help of AI. Describe your project briefly</label> */}
-        <textarea id="message" rows="4" value={desc} onChange={(e)=>{setDesc(e.target.value)}} class="block p-2.5 w-full focus:outline-none min-h-[20rem] max-h-80  text-sm text-gray-900 bg-gray-50 rounded-3xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Describe..." required></textarea>
-        <button onClick={(e)=>getRes(e)} class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+        <textarea id="message" rows="4" value={desc} onChange={(e)=>{setDesc(e.target.value)}} class="block p-2.5 w-full focus:outline-none min-h-[20rem] max-h-80  text-sm text-white border-none bg-white bg-opacity-10 rounded-3xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600" placeholder="Describe..." required></textarea>
+        <button onClick={(e)=>getRes(e)} class="mt-4  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
       </form>
     </>
   )

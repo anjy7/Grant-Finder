@@ -7,7 +7,7 @@ function scrollToBottom() {
   const startTime = performance.now();
   const duration = 1000; // 2 seconds
   const start = window.pageYOffset;
-  const end = 800;
+  const end = 1030;
 
   function step(timestamp) {
     const progress = Math.min(1, (timestamp - startTime) / duration);
@@ -73,7 +73,6 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
     })
       .then((res) => {
         scrollToBottom();
-        window.scrollTo(0, 800)
         console.log(res);
         responseHandler(res);
       })

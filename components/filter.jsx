@@ -70,7 +70,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
                     if (activeOption?.includes(`${x}`)) {
 
                       activeOption.splice(activeOption.indexOf(`${x}`), 1);
-                      console.log("1010100101", activeOption);
+                      // console.log("1010100101", activeOption);
                       let yo = activeOption;
                       activeCat.splice(activeCat.indexOf(`${x}`), 1)
 

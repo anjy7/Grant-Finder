@@ -15,7 +15,7 @@ const imgs = {
 }
 
 export default function Card({ project, details, type, category, deadline, imgUrl, name, funding, time, accepting }) {
-    console.log(project in imgs)
+    // console.log(project in imgs)
     return (
         // <div className="h-[28rem] w-80 rounded-[3.3rem] bg-gray-500 bg-opacity-20 ">
         //     {/* <div className="bg-auto bg-no-repeat h-2/5 rounded-t-2xl rounded-b-xl w-full bg-center" style={{ backgroundImage: "url('https://uploads-ssl.webflow.com/61d0960dc36814254b73e5ba/63c58f8681ed581fe75226c7_0.png')" }}>

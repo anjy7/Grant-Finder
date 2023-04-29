@@ -27,7 +27,7 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
 
 
     useEffect(() => {
-        console.log("first");
+        // console.log("first");
     }, [activeOption])
 
 

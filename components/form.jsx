@@ -56,7 +56,7 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
     let prom = `Read the project description given below and tell me in which of the following categories does it fall in, it can fall in more than one category. Answer only in a python list format. The categories are "Communities", "DeFi", "Derivatives", "DEX", "EVM Compatible", "GameFi", "Infrastructure",
     , "Inter-operability", "Layer 1", "Layer 2", "Lend/Borrow", "NFT", "NFT Marketplace", "Oracle", "Social", "Social Causes",
     "Stablecoin", "Staking", "Yield Farming".`
-    console.log(desc)
+    // console.log(desc)
     let payload = {
       prompt: prom+desc,
       temperature: 0,
@@ -76,12 +76,12 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
       .then((res) => {
         setLoading(false)
         scrollToBottom();
-        console.log(res);
+        // console.log(res);
         responseHandler(res);
       })
       .catch((e) => {
         // setLoading(false);
-        console.log(e.message, e);
+        // console.log(e.message, e);
       });
   };
 
@@ -111,7 +111,7 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
       if (lis[lis.length-1] == ""){
         lis.splice(-1)
       }
-      console.log(lis)
+      // console.log(lis)
       setActiveOption(lis);
       filterItem(lis);
       setFilters(true)

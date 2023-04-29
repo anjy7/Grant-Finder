@@ -4,7 +4,7 @@ import { useEffect } from "react";
 export default function Cards({ data,activeOption }) {
 
     useEffect(() => {
-        console.log("first");
+        // console.log("first");
     }, [activeOption])
 
     const array = ["https://uploads-ssl.webflow.com/61d0960dc36814254b73e5ba/63c58f8681ed581fe75226c7_0.png","https://uploads-ssl.webflow.com/61d0960dc36814254b73e5ba/63d020c525b1abb082789af5_0.png","https://uploads-ssl.webflow.com/61d0960dc36814254b73e5ba/63c58f8681ed581fe75226c7_0.png","https://uploads-ssl.webflow.com/61d0960dc36814254b73e5ba/63c45a1274f934af80c1f810_0.png","https://uploads-ssl.webflow.com/61d0960dc36814254b73e5ba/63cd786ac8b33af8c01bfc3c_0.png"]

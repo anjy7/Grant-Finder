@@ -56,7 +56,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
   let ecosystem = ["Aurora", "Avalanche", "Bitcoin", "BNB", "Celo", "Cosmo Hub", "Ethereum", "Evmos", "Fantom", "Gnosis", "Harmony", "Internet Computer", "Katlyn", "NEAR Protocol", "Optimism", "Polygon", "Solana", "Stacks"];
 
   return (
-    <div className="ml-[6.5rem]  w-3/4 sm:ml-14">
+    <div className="ml-[2.2rem]  w-3/4 sm:ml-14">
       <div className="text-black flex  mb-5 mt-5 justify-center w-full">
         
         <div className="">
@@ -70,7 +70,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
                     if (activeOption?.includes(`${x}`)) {
 
                       activeOption.splice(activeOption.indexOf(`${x}`), 1);
-                      console.log("1010100101", activeOption);
+                      // console.log("1010100101", activeOption);
                       let yo = activeOption;
                       activeCat.splice(activeCat.indexOf(`${x}`), 1)
 
@@ -155,7 +155,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
                     }
                   }
                   }
-                  className="ml-2 mt-1 mb-1 min-w-[7rem] rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]"
+                  className="ml-2 mt-1 mb-1 min-w-[8rem] md:min-w-[7rem] rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]"
                 >
                   <div className={ `${activeOption?.includes(`${x}`) ? "bg-[#6947BD] bg-opacity-50" : "bg-black"} : h-full w-full rounded-xl text-white`}>
                     {x}

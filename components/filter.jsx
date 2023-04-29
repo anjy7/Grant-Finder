@@ -155,7 +155,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
                     }
                   }
                   }
-                  className="ml-2 mt-1 mb-1 min-w-[7rem] rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]"
+                  className="ml-2 mt-1 mb-1 min-w-[8rem] md:min-w-[7rem] rounded-xl bg-gradient-to-r from-[#281E87] via-[#4628B4] to-[#6947BD] px-[1px] py-[1.2px]"
                 >
                   <div className={ `${activeOption?.includes(`${x}`) ? "bg-[#6947BD] bg-opacity-50" : "bg-black"} : h-full w-full rounded-xl text-white`}>
                     {x}

@@ -9,23 +9,23 @@ import data from "./grants.json";
 
 const inter = Inter({ subsets: ["latin"] });
 
-async function getData() {
-  const res = await fetch(`${process.env.BACKEND_URL}/findGrants`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-    cache:'no-store'
-  });
-  if (!res.ok) {
-    // throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
+// async function getData() {
+//   const res = await fetch(`${process.env.BACKEND_URL}/findGrants`, {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "Access-Control-Allow-Origin": "*",
+//     },
+//     cache:'no-store'
+//   });
+//   if (!res.ok) {
+//     // throw new Error("Failed to fetch data");
+//   }
+//   return res.json();
+// }
 
 export default async function Home() {
-  await getData();
+  // await getData();
   
   let alldata = [];
   let dat = data['_default']

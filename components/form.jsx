@@ -81,7 +81,7 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
       })
       .catch((e) => {
         // setLoading(false);
-        console.log(e.message, e);
+        // console.log(e.message, e);
       });
   };
 

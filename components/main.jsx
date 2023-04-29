@@ -30,19 +30,17 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
         // console.log("first");
     }, [activeOption])
 
-
     function search(items) {
         return items?.filter((item) => {
             return (searchParam).some((newItem) => {
                 return (
-                    item[newItem]?.toString().toLowerCase().indexOf(q.toLowerCase()) >
-                    -1
-                );
+                    item[newItem]?.toString().toLowerCase().indexOf(q.toLowerCase()) >-1);
             });
         }
         );
     }
 
+    console.log(filtered.length);
     
 
     return (

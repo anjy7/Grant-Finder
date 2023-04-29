@@ -35,7 +35,7 @@ export default function Landing({ setActiveOption, filterItem, setFilters }) {
                 <div>
                     {isMenuOpen ?
                         <div className="flex flex-col h-[20rem]">
-                            <div className="px-5"><br />We will help you find grants with the help of AI. Please explain your project brefly</div>
+                            <div className="px-5"><br />We will help you find grants with the help of AI. Please explain your project briefly.</div>
                             
                             <div className="flex ">
 

@@ -42,7 +42,7 @@ export default function Card({ project, details, type, category, deadline, imgUr
         //     </div>
         // </div>
 
-        <div className="text-center hover:scale-95">
+        <div className="text-center">
             <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative bg-black bg-opacity-25   shadow-inner shadow-[#5049a8]">
                 {/* <div className="h-[28rem] w-80 rounded-[3.3rem]   p-4 relative   shadow-[inset_0_10px_40px_rgba(67, 255, 100, 0.85)]"> */}
                 {

@@ -56,7 +56,7 @@ function Filter({ data,filterItem, filtered, setFiltered, activeCat, setActiveCa
   let ecosystem = ["Aurora", "Avalanche", "Bitcoin", "BNB", "Celo", "Cosmo Hub", "Ethereum", "Evmos", "Fantom", "Gnosis", "Harmony", "Internet Computer", "Katlyn", "NEAR Protocol", "Optimism", "Polygon", "Solana", "Stacks"];
 
   return (
-    <div className="ml-[6.5rem]  w-3/4 sm:ml-14">
+    <div className="ml-[2.2rem]  w-3/4 sm:ml-14">
       <div className="text-black flex  mb-5 mt-5 justify-center w-full">
         
         <div className="">

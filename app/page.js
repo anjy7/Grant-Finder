@@ -4,6 +4,7 @@ import Combine from "@/components/combine";
 const inter = Inter({ subsets: ["latin"] });
 
 async function getData() {
+  
   const res = await fetch(`${process.env.BACKEND_URL}/findGrants`, {
     method: "GET",
     headers: {

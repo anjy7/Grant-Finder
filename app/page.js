@@ -27,7 +27,7 @@ async function getData() {
 export default async function Home() {
   let data = await getData();
   let alldata = data.grants;
-  console.log(alldata)
+  // console.log(alldata)
   
   // let alldata = [];
   // let dat = data['_default']

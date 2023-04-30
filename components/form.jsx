@@ -63,6 +63,7 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
       model: "text-davinci-003"
     }
     // setLoading(true);
+    console.log(process.env.NEXT_PUBLIC_OPENAI_API_KEY)
     axios({
       method: "POST",
       url: "https://api.openai.com/v1/completions",
@@ -70,7 +71,8 @@ let type = ["Analytics", "Art", "Community","Content", "Design", "Development","
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer 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"
+          // "Bearer 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"
+          `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`
       }
     })
       .then((res) => {

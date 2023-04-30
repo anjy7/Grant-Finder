@@ -9,31 +9,33 @@ import data from "./grants.json";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// async function getData() {
-//   const res = await fetch(`${process.env.BACKEND_URL}/findGrants`, {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json",
-//       "Access-Control-Allow-Origin": "*",
-//     },
-//     cache:'no-store'
-//   });
-//   if (!res.ok) {
-//     // throw new Error("Failed to fetch data");
-//   }
-//   return res.json();
-// }
+async function getData() {
+  const res = await fetch(`${process.env.BACKEND_URL}/findGrants`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+    next:{revalidate:60*10}
+  });
+  if (!res.ok) {
+    // throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
 
 export default async function Home() {
-  // await getData();
+  let data = await getData();
+  let alldata = data.grants;
+  console.log(alldata)
   
-  let alldata = [];
-  let dat = data['_default']
-  let l = Object.keys(dat).length
-  for (let i=1; i<=l; i++){
-    alldata.push(dat[`${i}`])
-  }
-  // console.log("-====================================================",alldata)
+  // let alldata = [];
+  // let dat = data['_default']
+  // let l = Object.keys(dat).length
+  // for (let i=1; i<=l; i++){
+  //   alldata.push(dat[`${i}`])
+  // }
+
   return (
     <div className="max-w-[100vw] ">
       <Combine alldata={alldata}/>

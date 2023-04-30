@@ -33,6 +33,7 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
     let howMany = 0;
 
     function search(items) {
+        console.log(items)
         let filtItems = items?.filter((item) => {
             return (searchParam).some((newItem) => {
                 return (
@@ -41,7 +42,7 @@ export default function Main({ data,activeOption,setActiveOption,filterItem
             });
         }
         );
-        howMany = filtItems.length;
+        howMany = filtItems?.length;
         return filtItems
     }
 
